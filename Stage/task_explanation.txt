@@ -1,0 +1,31 @@
+===== Task Explanation =====
+Introduction:
+According to file 'mock_propagandaOutput_one_document.json', one json file refers to one article/document to show on a web demo result page. Each json element consists of ['article_name','text','label','span'] where each element refers to a sentence of the whole article. The web demo is expected to show the whole article in the order of the all elements within a file, with highlighted propaganda span, where all text has to be present on the output page regardless the propaganda labels (show the sentence even if the sentence has none of the propaganda span).    
+
+Explanation of each json element:
+'article_name' is to indicate a name of an article (the same article_name per one json file.)
+'text' is a sentence of the document.
+'label' is a label of propaganda span where the list of labels is shown below. Note that if an element has 'label':0, it means this 'text' element is not a propaganda.  
+'span' is a propaganda span of 'text' value. If 'label' is 0, 'span' will be an empty string (e.g., ""). If 'label' has a label indicated with numbers listed below, it means that this exact 'span' has to be highlighted (with a colour) within the 'text' per sentence. 
+
+In general, this web demo has to show an entire doucument (all json 'text' element of a file). If 'span' is NOT "" and 'label' is NOT 0, the sentence has to be highlighted (with a colour).
+
+===== List of 14 Propaganda Labels =====
+'Appeal_to_Authority':1,
+'Appeal_to_fear-prejudice':2,
+'Bandwagon,Reductio_ad_hitlerum':3,
+'Black-and-White_Fallacy':4,
+'Causal_Oversimplification':5,
+'Doubt':6,
+'Exaggeration,Minimisation':7,
+'Flag-Waving':8,
+'Loaded_Language':9,
+'Name_Calling,Labeling':10,
+'Repetition':11,
+'Slogans':12,
+'Thought-terminating_Cliches':13,
+'Whataboutism,Straw_Men,Red_Herring':14
+
+Note:
+'':0 
+Label of '0' is not a propaganda. 

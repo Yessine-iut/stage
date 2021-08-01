@@ -1,0 +1,5 @@
+table { /* tables still need 'cellspacing="0"' in the markup */
+    border-collapse: separate !important;
+    border-spacing: 10px !important;
+    transform: scale(0.9);
+}

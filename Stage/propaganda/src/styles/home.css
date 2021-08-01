@@ -1,0 +1,68 @@
+body{
+   /* background-image: url("../images/propaganda2.jpg");
+    background-image: none;*/
+    overflow-y: scroll !important;
+    background-color: #444857;
+
+}
+
+#btn2{
+    margin-top:7%;
+
+}
+.container2 .text {
+    background: rgba(0, 0, 0, 0.8);
+    z-index: 1;
+    position: absolute;
+    text-align: center;
+    font-family: Georgia;
+    margin: 0 auto;
+    left: 0;
+    right: 0;
+    top: 40%;
+    color: white;
+    width: 70%;
+    text-align: center;
+
+}
+@media all and (max-width: 800px){
+    .container2 .text {
+        top:20%
+    }
+    
+}
+@media all and (max-width: 800px){
+    .getStarted {
+        margin-top:25% !important;
+        margin-left:auto !important;
+        
+    }
+    
+}
+@media all and (max-width: 900px){
+    .getStarted {
+        margin-top:20% !important;
+        margin-left:auto !important;
+
+    }
+    
+}
+@media all and (max-width: 900px){
+    .boxes {
+        margin-left:10% !important;
+    }
+    
+}
+.container2 .text button{
+    background:'none';
+    z-index: 1;
+    position: absolute;
+    margin: 0 auto;
+    left: 0;
+    right: 0;
+    top: 30%;
+    color: white;
+    text-align: center;
+
+}
+

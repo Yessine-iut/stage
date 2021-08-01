@@ -1,0 +1,28 @@
+#h1
+{
+  font-size: 32px;
+  font-family:Arial, Helvetica, sans-serif;
+  color: black;
+  padding:16px;
+  font-weight:lighter;
+   
+  text-align:center;
+  display:block;
+  margin:16px;
+  background-image:url(../images/sunburst.png); 
+ /* background-image:url(../images/propagandatest.jpg);  */
+
+
+}
+p{
+  color:white
+}
+li{
+  color:white
+}
+
+.linkColor{
+  color:wheat;
+}
+
+

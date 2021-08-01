@@ -1,0 +1,122 @@
+{
+    "article_0": {
+        "propaganda_1": {
+            "text": "Here is the second sentence.",
+            "span_1": {
+                "span": "Here is the second",
+                "label": [9,11,13],
+                "start_char": [0,0,0],
+                "end_index": [18,18,18],
+                "probability": [0,0,0]
+            }
+        },
+        "propaganda_2": {
+            "text": "In a glaring sign of just how stupid and petty things have become in Washington these days, Manchin was invited on Fox News Tuesday morning to discuss how he was one of the only Democrats in the chamber for the State of the Union speech not looking as though Trump killed his grandma.",
+            "span_1": {
+                "span": "In a",
+                "label": 11,
+                "start_char": 0,
+                "end_index": 4,
+                "probability": 0
+            },
+            "span_2": {
+                "span": "sign",
+                "label": 11,
+                "start_char": 13,
+                "end_index": 17,
+                "probability": 0
+            },
+            "span_3": {
+                "span": "stupid and petty",
+                "label": 9,
+                "start_char": 30,
+                "end_index": 46,
+                "probability": 1
+            },
+            "span_4": {
+                "span": "have become",
+                "label": 9,
+                "start_char": 54,
+                "end_index": 65,
+                "probability": 0
+            },
+            "span_5": {
+                "span": "have become",
+                "label": 11,
+                "start_char": 54,
+                "end_index": 65,
+                "probability": 0
+            },
+            "span_6": {
+                "span": "Manchin was",
+                "label": 11,
+                "start_char": 92,
+                "end_index": 103,
+                "probability": 0
+            },
+            "span_7": {
+                "span": "on Fox",
+                "label": 11,
+                "start_char": 112,
+                "end_index": 118,
+                "probability": 0
+            },
+            "span_8": {
+                "span": "morning to discuss how he",
+                "label": 11,
+                "start_char": 132,
+                "end_index": 157,
+                "probability": 0
+            },
+            "span_9": {
+                "span": "one",
+                "label": 7,
+                "start_char": 162,
+                "end_index": 165,
+                "probability": 1
+            },
+            "span_10": {
+                "span": "Democrats",
+                "label": 13,
+                "start_char": 178,
+                "end_index": 187,
+                "probability": 0
+            },
+            "span_11": {
+                "span": "chamber",
+                "label": 10,
+                "start_char": 195,
+                "end_index": 202,
+                "probability": 0
+            },
+            "span_12": {
+                "span": "State of",
+                "label": 8,
+                "start_char": 211,
+                "end_index": 219,
+                "probability": 0
+            },
+            "span_13": {
+                "span": "State of",
+                "label": 11,
+                "start_char": 211,
+                "end_index": 219,
+                "probability": 0
+            },
+            "span_14": {
+                "span": "looking as",
+                "label": 9,
+                "start_char": 241,
+                "end_index": 251,
+                "probability": 0
+            },
+            "span_15": {
+                "span": "Trump killed his",
+                "label": 11,
+                "start_char": 259,
+                "end_index": 275,
+                "probability": 1
+            }
+        }
+    }
+}
