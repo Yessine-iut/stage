@@ -1,5 +1,5 @@
 # stage
- 	* Steps
+ 	Steps
   * Download Visual Studio Code
   * Download NodeJs
   * Open Visual Studio Code
