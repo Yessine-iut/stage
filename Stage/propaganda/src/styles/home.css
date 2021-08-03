@@ -31,10 +31,15 @@ body{
     }
     
 }
+.getStarted {
+   left:44% !important;
+    
+}
 @media all and (max-width: 800px){
     .getStarted {
         margin-top:25% !important;
-        margin-left:auto !important;
+        /*margin-left:auto !important;*/
+        left:40% !important;
         
     }
     
@@ -42,7 +47,9 @@ body{
 @media all and (max-width: 900px){
     .getStarted {
         margin-top:20% !important;
-        margin-left:auto !important;
+       left:30% !important;
+
+       /* margin-left:auto !important;*/
 
     }
     
@@ -58,8 +65,7 @@ body{
     z-index: 1;
     position: absolute;
     margin: 0 auto;
-    left: 0;
-    right: 0;
+   
     top: 30%;
     color: white;
     text-align: center;
