@@ -1,0 +1,132 @@
+# CLEARN ARRANGE ARTICLE_PATH to NER_TAGS
+def arrangeNERdataset(path, label_tag,custom_tokenizer=BertTokenizer.from_pretrained('bert-base-uncased')):
+    # the model returns dataFrame of normal_text, and bert_tokenized_label
+    files = getFiles_in_folder(path)
+    # print('len_files', len(files))
+    collect_tokens_labels = []
+    propagandaLabeled_tokenizedSentence, nonePropagandaLabeled_tokenizedSentence = [], []
+    complete_taggings = []
+    # files = [x for x in files if x.]
+    unique_files = []
+    for file in files:
+        file = file.split('.')[0]
+        unique_files.extend([file])
+
+    for file in unique_files:
+        # print(file)
+        article_name = file.split('.')[0]
+        # read each .txt file, and its labels (of the same artcile at a time)
+        try:
+            with open(path+file+'.txt','r') as text_string, open(path+article_name+label_tag,'r') as labels:
+                text = text_string.read()
+                text_spans = list(string_span_tokenize(text, '\n')) # segmented as spans
+                label_spans = labels.read().split('\n')
+                text_spans_range, propaganda_spans_range = [],[]
+                # test_text = []
+                # put all span into range
+                for text_span in text_spans:
+                    start_offset, end_offset = text_span[0],text_span[1]
+                    original_text_range = range(int(start_offset),int(end_offset)) ### main variable -- write file according to this to avoid duplicate rows
+                    original_text = text[text_span[0]:text_span[1]]
+                    # print('=====current text range == original_text:',original_text)
+                    text_spans_range.append(original_text_range)
+
+                    for label_span in label_spans:
+                        try:
+                            article_id, technique, label_start_offset, label_end_offset = label_span.split('\t')
+                            # print('original_text_range,label_start_offset, label_end_offset',original_text_range,label_start_offset, label_end_offset)
+                            # propaganda_spans_range.append(range(int(start_offset),int(end_offset)))
+                            propaganda_spans_range.append(range(int(label_start_offset), int(label_end_offset)))
+
+                            # print('.......current comparison:',int(label_start_offset),int(label_end_offset),original_text_range)
+                            # if int(label_start_offset) in original_text_range and int(label_end_offset) in original_text_range: # propaganda span
+                            if int(label_start_offset) in original_text_range and int(label_end_offset) <= int(end_offset):  # propaganda span
+                                ### perform tokenization, put 'BIES' labels
+                                span = text[int(label_start_offset):int(label_end_offset)]
+
+                                ## write normal text, then replace the span tokens with the BIES tagging - output as a sentence, but tokenzied elements in a list[]
+                                # put all tokens in dict as key, assign value 0
+                                tokens_span = word_tokenize(span)
+                                tokens_original_text = word_tokenize(original_text)
+
+                                # custom_tokens_span = custom_tokenizer(span)
+                                # custom_tokens_original_text = custom_tokenizer(original_text)
+                                # print('tokens_original_text',custom_tokens_original_text)
+                                # print('tokens_span',custom_tokens_span)
+                                # exit()
+
+
+
+                                if len(tokens_span) == 1: # 1 word - labeled as propaganda
+
+                                    inner_arrange = []
+                                    for original_t in tokens_original_text:
+                                        if original_t == tokens_span[0]:    inner_arrange.append([original_t,'S'])
+                                        else:  inner_arrange.append([original_t,'O'])
+                                        # print('inner_arrange',inner_arrange)
+                                    propagandaLabeled_tokenizedSentence.append(inner_arrange)
+                                else: # >=2 words (span) - labeled as propaganda
+                                    inner_arrange = []
+                                    for original_t in tokens_original_text:
+                                        if original_t == tokens_span[0]:    inner_arrange.append([original_t, 'B'])
+                                        elif original_t in tokens_span[1:-1]:    inner_arrange.append([original_t, 'I'])
+                                        elif original_t == tokens_span[-1]: inner_arrange.append([original_t, 'E'])
+                                        else:   inner_arrange.append([original_t, 'O'])
+                                    propagandaLabeled_tokenizedSentence.append(inner_arrange)
+                                continue
+                                # print('propagandaLabeled_tokenizedSentence', propagandaLabeled_tokenizedSentence)
+                                #     for t in tokens_span[1:-1]:
+                                #         inner_arrange.append([t, 'I'])
+                                #     inner_arrange.append([tokens_span[-1], 'E'])
+                                #     propagandaLabeled_tokenizedSentence.extend(inner_arrange)
+                                #     # print('collect_tokens_labels', collect_tokens_labels[-10:])
+                                #     for original_t in tokens_original_text:
+                                #         for t_in_span in tokens_span:
+                                #             if original_t == t_in_span: propagandaLabeled_tokenizedSentence.append([original_t,'S'])
+                                # print('span_text', span)
+                                # # find span_index in sentence_index
+                                # # replace span_index with code below
+                                # # ============== here is to change each token
+                                # print('=======tokens',len(tokens_span),tokens_span)
+                                # if len(tokens_span) == 1:  ## we are not just tagging the span, but all tokens WITH the span
+                                #     collect_tokens_labels.append([tokens_span[0],'S'])
+                                #     print('collect_tokens_labels',collect_tokens_labels[-10:])
+                                # elif len(tokens_span) > 1:
+                                #     inner_arrange = []
+                                #     inner_arrange.append([tokens_span[0],'B'])
+                                #     for t in tokens_span[1:-1]:
+                                #         inner_arrange.append([t,'I'])
+                                #     inner_arrange.append([tokens_span[-1],'E'])
+                                #     collect_tokens_labels.extend(inner_arrange)
+                                #     print('collect_tokens_labels',collect_tokens_labels[-10:])
+                                #     exit()
+                                # continue
+                                # else:
+                                #     ### perform tokenization, put 'O' labels
+                                #     sentence = text[int(start_offset):int(end_offset)]
+                                #     tokens = word_tokenize(sentence)
+                                #     inner_arrange = []
+                                #     for t in tokens:
+                                #         inner_arrange.append([t, 'O'])
+                                #     collect_tokens_labels.extend(inner_arrange)
+                                #     print('collect_tokens_labels',collect_tokens_labels[-10:])
+                                #     # exit()
+                        except ValueError:
+                            # print('ValueError: label_span',label_span) # usually error occures due to a token of empty string
+                            pass
+        except FileNotFoundError:
+            # print('FileNotFoundError',file) # end of file - found '\n'
+            pass
+
+        for element in propagandaLabeled_tokenizedSentence[:10]:
+            tokens_in_sent, labels_in_sent = [], []
+            for token,label in element:
+                tokens_in_sent.append(token)
+                labels_in_sent.append(label)
+            complete_taggings.append([tokens_in_sent,labels_in_sent])
+
+    # print('complete_taggings',complete_taggings)
+    df_complete_taggings = pd.DataFrame(complete_taggings,columns=['text','labels'])
+    print(df_complete_taggings)
+    exit()
+    return complete_taggings
