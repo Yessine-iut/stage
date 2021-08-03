@@ -1,5 +1,6 @@
-# stage
- 	Steps
+It is a website allowing the use of an AI which detects the different propaganda of an entered text.
+
+## Use the website on your pc
   * Download Visual Studio Code
   * Download NodeJs
   * Open the folder span_boundary_detection
@@ -9,5 +10,3 @@
   * Open a terminal in Visual Studio Code  (Terminal, new terminal)
   * In terminal write: cd Stage/propaganda
   * And write : npm start
-  * (Normally the script will start and the browser will display the project)
-
