@@ -5,7 +5,7 @@ import "../styles/textInput.css";
 import axios from "axios";
 import { Link, useHistory } from "react-router-dom";
 
-/**Fichier textInput.js, c'est le textInput utilisé dans le service 1 avec les boutons ainsi que les exemples */
+/**File textInput.js, this is the textInput used in service 1 with the buttons as well as the examples */
 
 export var data;
 let id2 = 0;
@@ -25,7 +25,7 @@ function App() {
   );
 
   function sendData() {
-    //On fait disparaitre tous les élements et apparaitre le GIF de chargement
+    // We make all the elements disappear and the loading GIF appears
     let img = document.getElementById("loading");
     img.style.display = "flex";
 

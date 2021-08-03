@@ -3,7 +3,7 @@ import './footer.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {  /*faFacebookF, faGithub, faLinkedin,*/ faTwitter , faYoutube } from '@fortawesome/free-brands-svg-icons';
 
-/**Fichier footer.js, c'est le footer de chaque page du site*/
+/**File footer.js, it's the footer of each page of the site*/
 function footer () {
   return (
     <div id="footer" className="site-footer">
@@ -46,10 +46,8 @@ function footer () {
 
         <div className="col-md-4 col-sm-6 col-xs-12">
           <ul className="social-icons">
-          { /*<li><a className="facebook" href="./#"><FontAwesomeIcon icon={faFacebookF} /></a></li>*/}
             <li><a className="twitter" href="https://twitter.com/wimmics?lang=en"><FontAwesomeIcon icon={faTwitter}/></a></li>
             <li><a className="youtube" href="https://www.youtube.com/channel/UCwo21i7ELnTGZ72kHzOq7kQ"><FontAwesomeIcon icon={faYoutube}/></a></li>
-            {/*<li><a className="linkedin" href="./#"><FontAwesomeIcon icon={faLinkedin}/></a></li>  */}
           </ul>
         </div>
       </div>

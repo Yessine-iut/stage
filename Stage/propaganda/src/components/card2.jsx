@@ -5,7 +5,7 @@ import img3 from '../images/text_high.png'
 
 
 
-/**Fichier card2.jsx, Classe Card permettant de créer une carte et son contenu.*/
+/**Fichier card2.jsx, Class Cards used to create a Card and its content.*/
 class Cards extends Component{
     render(){
         return(

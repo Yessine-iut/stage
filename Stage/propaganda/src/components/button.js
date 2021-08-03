@@ -1,8 +1,8 @@
 import styled from "styled-components";
 
-/**Fichier button.js, Composant button, ce sont tous les boutons crées dans chaque page du site. */
+/**File button.js, Composant button, these are all the buttons created in each page of the website. */
 
-//Permet de définir la couleur du bouton
+// Used to define the color of the button
 const theme = {
   blue: {
     default: "#3f51b5",
@@ -10,7 +10,7 @@ const theme = {
   },
 };
 
-//Création du bouton en CSS
+// Create the button in CSS
 const Button = styled.button`
   background-color: ${(props) => theme[props.theme].default};
   color: white;
@@ -30,7 +30,7 @@ const Button = styled.button`
     opacity: 0.7;
   }
 `;
-//Par défaut le thème est bleu
+// By default the theme is blue
 Button.defaultProps = {
   theme: "blue",
 };

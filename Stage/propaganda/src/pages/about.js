@@ -1,7 +1,6 @@
 
 import "../styles/about.css";
-//La page About du site
-
+// The About page of the website
 const About = () => {
   return (
     <>

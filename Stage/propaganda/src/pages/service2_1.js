@@ -1,30 +1,30 @@
 import React from 'react';
-//import {Reponse} from '../components/textInput'
-//import data from "../json/jsonmockV4.json"
 import {data} from '../components/textInput2'
-
-/*import WordCloud from "@nhuson/react-d3-cloud";
-import { Resizable } from "re-resizable";*/
 import ReactWordcloud from "react-wordcloud";
 import { saveAs } from "file-saver";
 import Button from '../components/button';
 import {Link} from "react-router-dom";
-
 import Chkbox from '../components/chkbox2';
 import "../styles/service2_1.css"
 import "tippy.js/dist/tippy.css";
 import "tippy.js/animations/scale.css";
 import notFound from "../images/404.png"
+/**File service2_1.js, the second page of the service 2, page of the WordCloud*/
 
+
+//The future word of the WordCloud
 export var word = [
  
 ];
+//The colors of Words of the WordCloud
 const callbacks = {
   getWordColor: word => word.color,
   
 }
+//Size of the WordCloud
 const size = [600, 400];
 
+//Options for the WordCloud
 const options = {
   colors: ["#1f77b4", "#ff7f0e", "#2ca02c", "#d62728", "#9467bd", "#8c564b"],
   enableTooltip: true,
@@ -42,6 +42,7 @@ const options = {
 };
 
  class Service2_1 extends React.Component{
+ //The render of the page
  render(){
   if(data===" "){
     return<><div style={{textAlign:'center',marginTop:'10%',fontSize:'60px'}}>The input text is empty.</div>
@@ -94,16 +95,15 @@ const options = {
 </div>  );
  }
 }
+ //Download the JSON file
  function saveDynamicDataToFile() {
-
-  //var userInput = document.getElementById("myText").value;
-
   var blob = new Blob([JSON.stringify(data)], { type: "json/plain;charset=utf-8" });
   let today=new Date()
   let name="PropagandaWordClouds_"+today.getHours()+"h"+today.getMinutes()+"_"+today.getMonth()+"_"+today.getDate()+"_"+today.getFullYear()
   saveAs(blob, name);
 }
 
+//Create the WordCloud with the data that the backend send
 function Datacloud(){
   word = [
  
@@ -114,13 +114,10 @@ function Datacloud(){
     name=i
   }
   for(let i in data[name]){
-
     for(let j in data[name][i]){
-        if(j!=='text'){
-
-        
-      
-   
+    //We don't take the child text for the wordCloud
+    if(j!=='text'){
+      //When the span it's an object
       if(typeof(data[name][i][j].label)!=='object'){
        if(data[name][i][j].label!==0){
         let spanCourant={};
@@ -131,15 +128,11 @@ function Datacloud(){
       }
       }else{
         for(let v=0;v<data[name][i][j].label.length;v++){
-
           let spanCourant={};
           spanCourant.text=data[name][i].text.substring(data[name][i][j].start_char[v],data[name][i][j].end_index[v]);
           spanCourant.value=data[name][i][j].probability[v];
           spanCourant.label=data[name][i][j].label[v];
-
           spans.push(spanCourant)
-        
-          
         }
       }
     }
@@ -147,7 +140,7 @@ function Datacloud(){
 
   }    
   let colors=["yellow","red","green","magenta","maroon","#7a7a7a","orange","lime","#9B5D9B","aqua","pink","#8486D4","#5A6309","#D1C1F0"]
-
+  //If the spans it's very long we cut it with [...]
   for(let i=0;i<spans.length;i++){
     if(spans[i].text.length>48){
       let mot=spans[i].text.substring(spans[i].text.lastIndexOf(" ")+1, spans[i].text.length);
@@ -163,7 +156,7 @@ function Datacloud(){
 
         
 }
-
+//Create the checkbox
 function creerChckBox(){
   let propagandas=["Appeal_to_\nAuthority","Appeal_to\n_fear-prejudice","Bandwagon, \nReductio_ad_hitlerum","Black-\nand-White\n_Fallacy","Causal_\nOversimplification","Doubt","Exaggeration,\nMinimisation","Flag-\nWaving","Loaded_\nLanguage","Name_Calling,\nLabeling","Repetition","Slogans","Thought-\nterminating_\nCliches","Whataboutism\n,Straw_Men,\nRed_Herring"]
   let colors=["yellow","red","green","magenta","maroon","#7a7a7a","orange","lime","#9B5D9B","aqua","pink","#8486D4","#5A6309","#D1C1F0"]
@@ -253,15 +246,13 @@ export function changerCloud(name,color){
 }
 
 
-
+//Convert RGB to Hex
 function RGBToHex(rgb) {
   let sep = rgb.indexOf(",") > -1 ? "," : " ";
   rgb = rgb.substr(4).split(")")[0].split(sep);
-
   let r = (+rgb[0]).toString(16),
       g = (+rgb[1]).toString(16),
       b = (+rgb[2]).toString(16);
-
   if (r.length === 1)
     r = "0" + r;
   if (g.length === 1)

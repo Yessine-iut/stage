@@ -1,15 +1,10 @@
 import React, { useState } from 'react';
-
 import InputText from '../components/textInput';
-//import InputText from '../components/textInput3';
 import { useHistory } from "react-router-dom"
-
 import Loading from "../images/loading.gif"
 
-
+//File service1.js, the first page of the service 1 of the website
 const Service1 = () => {
-
-
     return (
       <>
       <div

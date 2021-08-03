@@ -3,7 +3,9 @@ import "../styles/home.css";
 import Button from '../components/button';
 import Card from '../components/card2';
 
-//Quand on clique sur getStarted on se redirige vers le bas de la page
+/**Home.js file, this is the main page of the site */
+
+// When we click on getStarted we redirect to the bottom of the page
 function redirection() {
   window.scrollBy(0,1000);
 }

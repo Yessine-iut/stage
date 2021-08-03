@@ -1,6 +1,8 @@
 import './card-style.css'
 const Card=({imgsrc,title,link,nameButton,text})=>{
-/**Fichier card.jsx, Ce sont les différentes cartes créees dans le site (Home, Contact-us), permet de définir les styles des cartes et l'architecture*/
+/**File card.jsx, These are the different cards created in the site (Home, Contact-us), used to define the styles of the maps and the architecture
+
+*/
 return(
 <div className="card text-center shadow" id="shadow">
     <div className="overflow">

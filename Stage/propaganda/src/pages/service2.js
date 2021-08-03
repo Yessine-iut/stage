@@ -3,7 +3,7 @@ import InputText from '../components/textInput2';
 import Loading from "../images/loading.gif"
 
 
-
+//File service2.js, the first page of the service 2 of the website
 const Service2 = () => {
     return (
       <>

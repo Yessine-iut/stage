@@ -8,7 +8,7 @@ import Inria from "../images/inria.png";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import { Navbar, Nav, NavDropdown } from "react-bootstrap";
 
-/**Fichier navbar.js, c'est la navbar du site web */
+/**File navbar.js, this is the website navbar*/
 class BootstrapNavbar extends React.Component {
   render() {
     return (
@@ -23,7 +23,7 @@ class BootstrapNavbar extends React.Component {
           <Router>
             <Navbar
               style={{ backgroundColor: "#D9D9D9" }}
-              /*bg="light"*/ variant="light"
+              variant="light"
               expand="lg"
               sticky="top"
             >
@@ -51,53 +51,48 @@ class BootstrapNavbar extends React.Component {
               <Navbar.Collapse id="basic-navbar-nav">
                 <div className="navbarY">
                   <Nav className="mr-auto">
-                    <Nav.Link href="/" /**style={{color:'black'}}*/>
+                    <Nav.Link href="/">
                       Home
                     </Nav.Link>
                     <NavDropdown title="Services" id="basic-nav-dropdown">
                       <NavDropdown.Item
-                        href="/PropagandaSnippetsDetection" /**style={{color:'black'}}*/
+                        href="/PropagandaSnippetsDetection" 
                       >
                         Snippets Detection
                       </NavDropdown.Item>
                       <NavDropdown.Item
-                        href="/PropagandaWordClouds" /**style={{color:'black'}}*/
+                        href="/PropagandaWordClouds"
                       >
                         Propaganda Word Cloud
                       </NavDropdown.Item>
-
-                      {/*<NavDropdown.Divider />*/}
-                      {/*<NavDropdown.Item href="#action/3.4">Separated link</NavDropdown.Item>*/}
                     </NavDropdown>
 
-                    <Nav.Link href="/about" /**style={{color:'black'}}*/>
+                    <Nav.Link href="/about">
                       About
                     </Nav.Link>
-                    <Nav.Link href="/contact-us" /**style={{color:'black'}}*/>
+                    <Nav.Link href="/contact-us">
                       Contact Us
                     </Nav.Link>
                   </Nav>
                 </div>
               </Navbar.Collapse>
-              {/*<Navbar.Brand  className="logo2" style={{display:'visible',marginRight:"8rem"}} href="https://www.inria.fr/fr">  
-                                   <img src={Inria} alt="logo" height="60"></img>
-                                        </Navbar.Brand>*/}
+         
             </Navbar>
 
             <br />
 
             <Switch>
               <Route exact path="/">
-                {/*<Home />*/}
+                
               </Route>
 
-              <Route path="/about-us">{/* <AboutUs />*/}</Route>
+              <Route path="/about-us"></Route>
 
-              <Route path="/contact-us">{/*<ContactUs />*/}</Route>
+              <Route path="/contact-us"></Route>
             </Switch>
           </Router>
 
-          {/*</div>*/}
+        
         </div>
 
         {window.addEventListener("resize", handleResize)}

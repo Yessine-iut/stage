@@ -1,11 +1,9 @@
 import React from "react";
 import "../styles/service1_1.css";
 
+/**File chkbox.js, these are the chkboxes created for service 1 */
 
-/**Fichier chkbox.js, ce sont les chkbox créees pour le service 1 */
-
-
-//Les différentes couleurs de chaque checkbox
+// The different colors of each checkbox
 var couleurs = {
   0: ["#ffffcc", "#ffff99", "#ffff66", "#ffff32", "#ffff00"],
   1: ["#ffe5e5", "#ffb2b2", "#ff7f7f", "#ff6666", "#ff0000"],
@@ -25,7 +23,7 @@ var couleurs = {
 
 class Chkbox extends React.Component {
   constructor(props) {
-    //On récupère les propriétés définis chez le parent
+    // We get the properties defined by the parent
     super(props);
     this.name = this.props.name;
     this.identifiant = this.props.identifiant;
@@ -33,7 +31,7 @@ class Chkbox extends React.Component {
     this.checked = true;
     this.label = this.props.label;
   }
-  //Fonction qui retourne le résultat
+  // Function that returns the result
   render() {
     return (
       <tr>
@@ -45,9 +43,7 @@ class Chkbox extends React.Component {
           <input
             name={this.identifiant}
             type="checkbox"
-            onClick={() =>
-              this.changerCouleur(this.identifiant,this.label)
-            }
+            onClick={() => this.changerCouleur(this.identifiant, this.label)}
             defaultChecked={this.checked}
           />
           <div style={this.calcMarge(this.name)} className="chart">
@@ -88,7 +84,7 @@ class Chkbox extends React.Component {
       </tr>
     );
   }
-  //Permet d'enlever l'overflow dû au manque d'espace des labels (On gagne plus d'espaces)
+  // Allows to remove the overflow due to the lack of space of the labels (We gain more spaces)
   calcMarge(name) {
     if (name.includes("\n")) {
       const style = {
@@ -102,8 +98,8 @@ class Chkbox extends React.Component {
     };
     return style;
   }
-  //Permet de changer les couleurs après le changement d'état d'une checkbox
-  changerCouleur(name,labelc) {
+  // Allows you to change the colors after the change of state of a checkbox
+  changerCouleur(name, labelc) {
     let propagandas = [
       "Appeal_to_Authority",
       "Appeal_to_fear-prejudice",
@@ -136,39 +132,39 @@ class Chkbox extends React.Component {
       13: ["#F3EEEA", "#e6ded5", "#d4c5b5", "#c7b4a0", "#c1ac95"],
       14: ["#ece6f9", "#ded3f4", "#dacdf3", "#d5c7f1", "#d1c1f0"],
     };
-    
-    //On regarde si la checkbox est coché ou non
+
+    // We see if the checkbox is checked or not
     if (document.querySelector('input[name="' + name + '"]').checked === true) {
-      //On selectionne dans le résultat tous les bouts de textes ayant le même id que la checkbox
+      // We select in the result all the pieces of text having the same id as the checkbox
       let span = document.querySelectorAll("#res #" + name);
       span.forEach(function (sp) {
-        //La couleur dépend de la probabilité, plus elle est basse plus la couleur est claire
+      // The color depends on the probability, the lower it is the lighter the color
         sp.style.backgroundColor =
           colors[labelc][
             Math.floor((sp.getAttribute("probability") * 100) / 25)
           ];
         sp.title = sp.getAttribute("title2");
       });
-      //On selectionne tous les bouts de texte ayant plusieurs "couleurs"
+      // We select all the bits of text having several "colors"
       span = document.querySelectorAll("#res #propaganda99");
       span.forEach(function (sp) {
-        //Labels est l'attribut qui nous donne les différents label appliqués à l'instant t sur la checkbox
+        // Labels is the attribute which gives us the different labels applied at time t on the checkbox
         let labels = sp.getAttribute("labels").split(",");
-        //labels2 est l'attribut qui nous donne les différents label appliqués dès l'initialisation et sont donc inchangés
+        // labels2 is the attribute which gives us the different labels applied from initialization and are therefore unchanged
         let labels2 = sp.getAttribute("labels2").split(",");
-        //Si a l'initialisation la checkbox possédait cette couleur et que la checkbox a été coché alors on rajoute le label
+        // If at initialization the checkbox had this color and the checkbox was checked then we add the label
         if (labels2.includes(labelc)) {
           labels.push(labelc);
         }
-        //On enlève les vides de la chaine caractère label pour que si dans le futur on fait un split nous n'avons pas de partie vide
-        if (labels.includes("")) {
+          // We remove the blanks from the label character string so that if in the future we split we don't have an empty part
+          if (labels.includes("")) {
           let indice = labels.indexOf("");
           labels.splice(indice, 1);
         }
 
         if (labels2.includes(labelc)) {
           sp.setAttribute("labels", labels);
-          //Si le texte ne possède qu'un label alors il n'est pas en gras et possède une couleur de fond
+          // If the text has only one label then it is not bold and has a background color
           if (labels.length === 1) {
             sp.style.textDecoration = "none";
             sp.style.fontWeight = "normal";
@@ -178,7 +174,7 @@ class Chkbox extends React.Component {
                 Math.floor((sp.getAttribute("probability") * 100) / 25)
               ];
             let titre = sp.getAttribute("title2").split("\n");
-            //On rajoute le label au titre
+            // Add the label to the title
             for (let t = 0; t < titre.length; t++) {
               if (titre[t].split(" - ")[0] === propagandas[labelc - 1]) {
                 sp.setAttribute(
@@ -198,15 +194,14 @@ class Chkbox extends React.Component {
                   ];
               }
             }
-
-          } //Si le texte ne possède aucun label alors il n'a pas de fond et n'est pas en gras
+          } // If the text has no label then it has no background and is not in bold
           else if (labels.length === 0) {
             sp.style.background = "none";
             sp.style.textDecoration = "none";
             sp.style.fontWeight = "normal";
 
             sp.removeAttribute("title");
-          } //Le texte possède plusieurs label, il est donc en gras
+          } // The text has several labels, so it is in bold
           else {
             sp.style.background = "none";
             sp.style.fontWeight = "bold";
@@ -232,10 +227,9 @@ class Chkbox extends React.Component {
             }
           }
         }
-       
       });
     } else {
-      //Dans le cas ou la checkbox n'est pas coché
+      // If the checkbox is not checked
       let span = document.querySelectorAll("#res #" + name);
 
       span.forEach(function (sp) {
@@ -298,7 +292,6 @@ class Chkbox extends React.Component {
           sp.style.background = "none";
           sp.style.fontWeight = "bold";
         }
-      
       });
     }
   }

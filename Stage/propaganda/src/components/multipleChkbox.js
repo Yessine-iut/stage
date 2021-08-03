@@ -2,10 +2,9 @@ import React from 'react'
 import "../styles/service1_1.css"
 import "../styles/multipleChkbox.css"
 import Chkbox from './chkbox';
-//import data from "../json/jsonmockV4.json"
 import {data} from './textInput'
 
-/**Fichier multipleChkbox.js, utilisé pour le service 1 pour créer les différentes chkbox suivant les données reçues */
+/**File multipleChkbox.js, used for service 1 to create the different chkboxes according to the data received */
 class Multiplechkbox extends React.Component{
     render(){
         return(
@@ -76,7 +75,7 @@ function creerChckBox(){
         spans.push(data[name][i]["span_"+v])
   
       }
-      //On trie les différents spans
+      // We sort the different spans compared to their start
       spans.sort(function compare(a, b) {
         if (a.start_char < b.start_char )
            return -1;
@@ -85,7 +84,7 @@ function creerChckBox(){
         return 0;
       }); 
       for(let v=0;v<spans.length;v++){
-          //Si le span ne possède pas plusieurs label
+          // If the span does not have several labels
           if(typeof(spans[v].label)!=='object'){
             labels.push(spans[v].label)
 
@@ -98,24 +97,21 @@ function creerChckBox(){
           }
       }
       tailleSpan=0;
-      //On enlève les doublons dans les labels
+      // We remove the duplicates in the labels
       sans_doublons = Array.from(new Set(labels));
   }
   var index = sans_doublons.indexOf(0);
-   //On enlève tout ce qui est égal à 0
+  // We remove everything that is equal to 0
   if (index > -1) {
     sans_doublons.splice(index, 1);
   }
-  /*for(let i=1;i<15;i++){
-    chckBoxes.push(<Chkbox key={i} name={propagandas[i-1]} identifiant={'propaganda'+sans_doublons[i-1]} color={colors[i-1]} label={""+i}/>)
-   }*/
    chckBoxes.push(<tr  key={15} ><td style={{
     display:"inline-flex",
     }}><mark id="propaganda99">Propaganda Techniques</mark></td></tr>)
 
 
   for(let i=0;i<sans_doublons.length;i++){
-    //On crée les checkbox en faisant attention à ne pas crée les checkbox pour les les phrases qui n'ont pas de label
+    // We create the checkboxes being careful not to create the checkboxes for the sentences that do not have a label
     if(sans_doublons[i]!==0){
    chckBoxes.push(<Chkbox key={i} name={propagandas[sans_doublons[i]-1]} identifiant={'propaganda'+sans_doublons[i]} color={colors[sans_doublons[i]-1]} label={""+sans_doublons[i]}/>)
   }

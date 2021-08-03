@@ -5,7 +5,7 @@ import img3 from "../images/Vorakit.jpg";
 
 import img4 from "../images/Yessine.jpg";
 import "../styles/contact-us.css";
-//La page Contact-Us du site web
+// The Contact-Us page of the website
 const ContactUs = () => {
   return (
     <>

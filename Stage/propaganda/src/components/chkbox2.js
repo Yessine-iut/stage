@@ -2,7 +2,7 @@ import React from "react";
 import "../styles/service1_1.css";
 import { changerCloud } from "../pages/service2_1";
 
-/**Fichier chkbox.js, ce sont les chkbox créees pour le service 2 */
+/**File chkbox.js, these are the chkboxes created for service 2 */
 class Chkbox extends React.Component {
   constructor(props) {
     super(props);

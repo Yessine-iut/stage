@@ -4,7 +4,7 @@ import "../styles/textInput.css";
 import axios from "axios";
 import { Link, useHistory } from "react-router-dom";
 
-/**Fichier textInpu2t.js, c'est le textInput utilisé dans le service 2 avec les boutons ainsi que les exemples */
+/**File textInpu2t.js, this is the textInput used in service 2 with the buttons as well as the examples*/
 export var data;
 let id = 0;
 function App() {
