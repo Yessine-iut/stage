@@ -17,7 +17,7 @@ function footer () {
         <div className="col-xs-6 col-md-3">
           <h6>Services</h6>
           <ul className="footer-links">
-            <li><a href="./PropagandaSnippetsDetection" style={{color:"wheat"}}>Propaganda Snippets Detection</a></li>
+            <li><a href="./PropagandaTechniquesClassification" style={{color:"wheat"}}>Propaganda techniques classification</a></li>
             <li><a href="./PropagandaWordClouds" style={{color:"wheat"}}>Propaganda Word Cloud</a></li>
            
           </ul>

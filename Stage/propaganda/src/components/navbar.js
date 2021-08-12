@@ -56,9 +56,9 @@ class BootstrapNavbar extends React.Component {
                     </Nav.Link>
                     <NavDropdown title="Services" id="basic-nav-dropdown">
                       <NavDropdown.Item
-                        href="/PropagandaSnippetsDetection" 
+                        href="/PropagandaTechniquesClassification" 
                       >
-                        Snippets Detection
+                       Propaganda techniques classification
                       </NavDropdown.Item>
                       <NavDropdown.Item
                         href="/PropagandaWordClouds"

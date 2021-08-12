@@ -49,7 +49,7 @@ function App() {
       let div = document.getElementById("footer");
 
       div.style = " display: visible";
-      history.push("/PropagandaSnippetsDetection2");
+      history.push("/PropagandaTechniquesClassification2");
     } else {
       id2++;
       axios
@@ -63,7 +63,7 @@ function App() {
           let div = document.getElementById("footer");
 
           div.style = " display: visible";
-          history.push("/PropagandaSnippetsDetection2");
+          history.push("/PropagandaTechniquesClassification2");
         })
 
         .catch((error) => {
@@ -87,7 +87,7 @@ function App() {
               className="snippets"
               style={{ fontFamily: "Georgia" }}
             >
-              Propaganda Snippets Detection
+              Propaganda techniques classification
             </h1>
 
             <h2
@@ -101,8 +101,7 @@ function App() {
                 paddingBottom: "20px",
               }}
             >
-              Just type in some text or copy/paste an example below, push the
-              button.
+              Type in some text or select an example below
             </h2>
           </div>
         </div>

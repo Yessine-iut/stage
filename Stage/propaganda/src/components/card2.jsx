@@ -12,7 +12,7 @@ class Cards extends Component{
 <div className="container-fluid d-flex justify-content-center">
     <div className="row">
         <div className="col-md-6">
-        <Card imgsrc={img3} title="Propaganda Snippets Detection" link="./PropagandaSnippetsDetection"  nameButton="Run" text="Input a free text to identify input free text to identify and classify propaganda techniques."/>
+        <Card imgsrc={img3} title="Propaganda techniques classification" link="./PropagandaTechniquesClassification"  nameButton="Run" text="Input a free text to identify input free text to identify and classify propaganda techniques."/>
         
         </div>
         <div className="col-md-6">

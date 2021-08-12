@@ -103,8 +103,7 @@ function App() {
               paddingBottom: "20px",
             }} 
           >
-            Just type in some text or copy/paste an example below, push the
-            button
+            Type in some text or select an example below
           </h2>
         </div>
       </div>

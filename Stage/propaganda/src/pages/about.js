@@ -62,7 +62,7 @@ const About = () => {
             marginTop: "50px",
           }}
         >
-          Propaganda Snippets Detection
+          Propaganda techniques classification
         </h2>
         <p style={{ marginLeft: "2%", marginRight: "2%" }}>
           We let users freely input a text to employ our supervised system to

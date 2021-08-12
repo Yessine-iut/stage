@@ -58,6 +58,7 @@ const options = {
    }
   return (
     <div id="wc">
+      <h2 id="titreRes" style={{textOrientation:"mixed",writingMode:"vertical-lr",color:"white",textAlign:"center",marginBottom:"-350px",verticalAlign:"center",marginTop:"90px",marginLeft:"300px",position:"fixed"}}>Word Cloud result</h2>
      {Datacloud()}
      
      <div style={{ width: "100%", height: "100%" }}>
@@ -72,8 +73,8 @@ const options = {
       position: 'absolute',
       left: '70%', 
       top:'95px',
-      maxHeight:'450px',
-      minHeight:'450px',
+      maxHeight:'380px',
+      minHeight:'380px',
       overflowY:"scroll",
       backgroundColor:'rgb(217, 217, 217)'
       
@@ -103,6 +104,56 @@ const options = {
   saveAs(blob, name);
 }
 
+/*function tableCompteur(){
+  let tailleSpan=0;
+  let sans_doublons;
+  let name=""
+  let labels=[]
+  let spans=[]
+
+  for(let i in data){
+    name=i
+  }
+  for(let i in data){
+    name=i
+  }
+  for(let i in data[name]){
+      
+      tailleSpan=Object.keys(data[name][i]).length
+
+      for(let v=1;v<tailleSpan;v++){
+        spans.push(data[name][i]["span_"+v])
+  
+      }
+      spans.sort(function compare(a, b) {
+        if (a.start_char < b.start_char )
+           return -1;
+        if (a.start_char > b.start_char )
+           return 1;
+        return 0;
+      }); 
+      for(let v=0;v<spans.length;v++){
+          if(typeof(spans[v].label)!=='object'){
+            labels.push(spans[v].label)
+
+          }else{
+            for(let p=0;p<spans[v].label.length;p++){
+              labels.push(spans[v].label[p])
+
+            }
+
+          }
+      }
+      tailleSpan=0;
+      
+  }
+  sans_doublons = Array.from(new Set(labels));
+  for(let i=0;i<sans_doublons.length;i++){
+
+  }
+
+
+}*/
 //Create the WordCloud with the data that the backend send
 function Datacloud(){
   word = [
@@ -151,7 +202,10 @@ function Datacloud(){
     word.push({text: spans[i].text,value: spans[i].value*100,color:colors[spans[i].label-1]}) //* 100
 
   }
-  
+  if(word.length===0){
+    return <h2 class="vide" style={{textAlign:'center',color:'white'}}>Nothing was found</h2>
+  }
+
 
 
         

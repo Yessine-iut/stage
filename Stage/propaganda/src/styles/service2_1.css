@@ -86,6 +86,10 @@
     padding: 1px;
 
 }
+.vide{
+    margin-top:15% !important;
+    margin-bottom: -250px !important;
+}
 @media all and (max-width: 900px)
 {
     #wc svg
@@ -136,3 +140,45 @@
 
     }
 }
+@media all and (max-width: 800px)
+{
+    #wc #titreRes
+    {
+        margin-left:250px !important;
+        left:-100% !important;
+
+
+    }
+}
+
+@media all and (max-width: 920px)
+{
+    #wc #titreRes
+    {
+        margin-left:90px !important;
+        display:'none'
+
+
+    }
+}
+@media all and (max-width: 300px)
+{
+    #wc #titreRes
+    {
+        margin-left:0px !important;
+        left:-80px !important;
+
+    }
+}
+@media all and (max-width: 1200px)
+{
+    #wc #titreRes
+    {
+        display:'none' !important;
+    }
+}
+
+
+
+
+

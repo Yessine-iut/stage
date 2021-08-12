@@ -30,8 +30,8 @@ function App() {
      <Router>
       <Switch>
         <Route path='/' exact component={Home} />
-        <Route path='/PropagandaSnippetsDetection' component={Service1} />
-        <Route path='/PropagandaSnippetsDetection2' component={Service1_1} />
+        <Route path='/PropagandaTechniquesClassification' component={Service1} />
+        <Route path='/PropagandaTechniquesClassification2' component={Service1_1} />
         <Route path='/PropagandaWordClouds' component={Service2} />
         <Route path='/PropagandaWordClouds2' component={Service2_2} />
         <Route path="/about" component={About}/>

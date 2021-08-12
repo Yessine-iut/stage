@@ -22,7 +22,7 @@ class Service1_1 extends React.Component {
           <div style={{ textAlign: "center", fontSize: "20px" }}>
             Please go back and put some text.
           </div>
-          <Link to="/PropagandaSnippetsDetection">
+          <Link to="/PropagandaTechniquesClassification">
             <Button style={{ marginLeft: "48%", marginBottom: "80px" }}>
               back
             </Button>
@@ -342,7 +342,7 @@ function saveDynamicDataToFile() {
   });
   let today = new Date();
   let name =
-    "PropagandaSnippetsDetection_" +
+    "PropagandaTechniquesClassification_" +
     today.getHours() +
     "h" +
     today.getMinutes() +
