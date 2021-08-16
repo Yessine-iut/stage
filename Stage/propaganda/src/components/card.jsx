@@ -1,4 +1,4 @@
-import './card-style.css'
+import '../styles/card-style.css'
 const Card=({imgsrc,title,link,nameButton,text})=>{
 /**File card.jsx, These are the different cards created in the site (Home, Contact-us), used to define the styles of the maps and the architecture
 

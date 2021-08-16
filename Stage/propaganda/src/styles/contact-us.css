@@ -3,6 +3,7 @@
 {
     #cardResponsive
     {
-        margin-left: 8%;
+        transform:scale(0.8) !important;
+        margin-right: 15% !important;
     }
 }

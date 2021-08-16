@@ -35,6 +35,15 @@ body{
    left:44% !important;
     
 }
+@media all and (max-width: 700px){
+    .getStarted {
+        margin-top:25% !important;
+        /*margin-left:auto !important;*/
+        left:45% !important;
+        
+    }
+    
+}
 @media all and (max-width: 800px){
     .getStarted {
         margin-top:25% !important;
@@ -44,22 +53,33 @@ body{
     }
     
 }
+@media all and (max-width: 850px){
+    .getStarted {
+        margin-top:25% !important;
+        /*margin-left:auto !important;*/
+        left:35% !important;
+        
+    }
+    
+}
 @media all and (max-width: 900px){
     .getStarted {
         margin-top:20% !important;
        left:30% !important;
-
        /* margin-left:auto !important;*/
 
     }
     
 }
-@media all and (max-width: 900px){
-    .boxes {
-        margin-left:10% !important;
+@media all and (max-width: 950px){
+    .getStarted {
+       left:38% !important;
+       /* margin-left:auto !important;*/
+
     }
     
 }
+
 .container2 .text button{
     background:'none';
     z-index: 1;
