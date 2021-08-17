@@ -2,10 +2,10 @@ It is a website allowing the use of an AI which detects the different propaganda
 
 ## Use the website on your pc
   * Download Visual Studio Code
-  * Download NodeJs
+  * Download NodeJs v12.17.0
   * Open the folder span_boundary_detection
   * Open pipeline.py
-  * Download Conda
+  * Download Conda 4.7.12
   * install all libraries in the requirement txt with the command line : pip install -r requirement.txt
   * Run pipeline.py
   * Open Visual Studio Code
