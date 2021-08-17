@@ -1,6 +1,12 @@
 It is a website allowing the use of an AI which detects the different propaganda of an entered text.
 
 ## Use the website on your pc
+ ### Requirements
+  - Visual Studio Code
+  - NodeJs 12.17.0
+  - Python 3.6.13
+  - Conda 4.7.12
+  ### Steps
   1. Download Visual Studio Code
   2. Download NodeJs 12.17.0
   3. Open the folder span_boundary_detection
