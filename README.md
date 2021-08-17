@@ -1,6 +1,6 @@
 It is a website allowing the use of an AI which detects the different propaganda of an entered text.
 
-## Use the website on your pc
+# Use the website on your pc
  ### Requirements
   - Visual Studio Code
   - NodeJs 12.17.0
@@ -20,10 +20,10 @@ It is a website allowing the use of an AI which detects the different propaganda
   11. In terminal write: cd Stage/propaganda
   12. And write : npm start
 
-## Propaganda Snippets Detection (Service 1)
+# Propaganda Snippets Detection (Service 1)
    This service allows you to highlight propaganda in different colors according to their type and their probability (Clearer for low probabilities) .
    
-## Propaganda Word Cloud (Service 2)
+# Propaganda Word Cloud (Service 2)
    This service creates a word cloud, the greater the probability of propaganda the greater the word.
     
 
