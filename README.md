@@ -19,10 +19,10 @@ It is a website allowing the use of an AI which detects the different propaganda
      5.2 Type on terminal “pip install -e .”
   6. Type on terminal “cd Stage/span_boundary_detection“
   7. Type on terminal “python Stage/span_boundary_detection/pipeline.py”
-  8. Flask package installation
-      8.1 Type on terminal “npm cache clean --force”
-      8.2 Go to directory using “cd Stage/propaganda”, if a directory “node_modules” exists, remove the folder manually
-      8.3 Type on terminal “npm install”
+  8. Flask package installation  
+      8.1 Type on terminal “npm cache clean --force”  
+      8.2 Go to directory using “cd Stage/propaganda”, if a directory “node_modules” exists, remove the folder manually  
+      8.3 Type on terminal “npm install”   
 
 # Propaganda Snippets Detection (Service 1)
    This service allows you to highlight propaganda in different colors according to their type and their probability (Clearer for low probabilities) .
