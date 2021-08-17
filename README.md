@@ -14,8 +14,8 @@ It is a website allowing the use of an AI which detects the different propaganda
   2. Create your own condo environment using “conda create -y --name <your_env_name> python==3.6.13”
   3. Activate the environment using “conda activate <your_env_name>”
   4. Type on terminal to install python dependencies in the created conda using “pip install -r Stage/span_boundary_detection/requirements.txt --user”
-  5. Install customised transformer model
-     5.1 Type on terminal “cd Stage/span_boundary_detection/custom_transformers”
+  5. Install customised transformer model  
+     5.1 Type on terminal “cd Stage/span_boundary_detection/custom_transformers”  
      5.2 Type on terminal “pip install -e .”
   6. Type on terminal “cd Stage/span_boundary_detection“
   7. Type on terminal “python Stage/span_boundary_detection/pipeline.py”
